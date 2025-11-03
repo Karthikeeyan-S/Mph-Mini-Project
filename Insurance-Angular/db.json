@@ -1,0 +1,97 @@
+{
+  "plans": [
+    {
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "description": "The Care Life Plan safeguards you from unforeseen circumstances by providing instant coverage with no waiting period. Emergency services such as immediate ambulance, specialist consultation and complete assistance are its major features.",
+      "baseAmt": 2500,
+      "validity": 15,
+      "id": "b4dd"
+    },
+    {
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "description": "The Good Health Plan is our best selling plan. Facilities like Air Ambulance and Buy Now and Pay Later options make it a stand out in the industry.",
+      "baseAmt": 2500,
+      "validity": 30,
+      "id": "b9cb"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1",
+      "name": "Justin",
+      "city": "Chennai",
+      "phone": "2780808989",
+      "email": "hello@gmail.com",
+      "age": "35",
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "validity": 30,
+      "paymentMode": "credit card",
+      "cardNumber": "7890-3223-7778",
+      "premiumAmt": 2500,
+      "paymentFreq": "yearly"
+    },
+    {
+      "id": "2",
+      "name": "Ravi Kumar",
+      "city": "Faridabad",
+      "phone": "+919899999990",
+      "email": "test@gmail.com",
+      "age": 22,
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "validity": "2023-12-11",
+      "paymentMode": "Credit Card",
+      "cardNumber": "1110-1212-2394",
+      "premiumAmt": 2500,
+      "paymentFreq": "Half Yearly"
+    },
+    {
+      "id": "e52a",
+      "name": "Karthikeeyan",
+      "city": "Chennai",
+      "phone": "8989898989",
+      "email": "karthikeeyan@gmail.com",
+      "age": 21,
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "validity": 15,
+      "paymentMode": "Credit Card",
+      "cardNumber": "1234-5678-9012",
+      "premiumAmt": 2138,
+      "paymentFreq": "Yearly"
+    },
+    {
+      "id": "612f",
+      "name": "Tilak",
+      "city": "Trichy",
+      "phone": "4545454545",
+      "email": "tilak@gmail.com",
+      "age": 25,
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "validity": 30,
+      "paymentMode": "Credit Card",
+      "cardNumber": "1234-5678-9012",
+      "premiumAmt": 4375,
+      "paymentFreq": "Yearly"
+    },
+    {
+      "id": "adbd",
+      "name": "Harsh",
+      "city": "Patna",
+      "phone": "7878787878",
+      "email": "harsh@gmail.com",
+      "age": 25,
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "validity": 15,
+      "paymentMode": "UPI",
+      "cardNumber": "1234-5678-9012",
+      "premiumAmt": 3750,
+      "paymentFreq": "Yearly"
+    }
+  ]
+}

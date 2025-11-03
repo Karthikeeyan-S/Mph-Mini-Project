@@ -1,0 +1,156 @@
+<div class="plan-details">
+  <div class="container py-5">
+
+    <!-- Back Button -->
+    <button class="btn btn-outline-secondary mb-4" (click)="goBack()">
+      <i class="bi bi-arrow-left"></i> Back to All Plans
+    </button>
+
+    <!-- Loading -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
+      <p class="mt-3">Loading plan details...</p>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="error && !loading" class="alert alert-danger text-center">
+      <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+      <br>
+      <small>Please ensure the server is running: <code>npm run json-server</code></small>
+    </div>
+
+    <!-- Plan Details -->
+    <div *ngIf="plan && !loading" class="row justify-content-center g-5">
+      
+      <!-- Left Section -->
+      <div class="col-lg-7">
+        <div class="plan-card p-4">
+          <h2 class="text-purple fw-bold">{{ plan.planName }}</h2>
+          <p class="lead text-muted mb-4">{{ plan.description }}</p>
+
+          <div class="price-display mb-4">
+            <span class="currency">₹</span>
+            <span class="amount">{{ plan.baseAmt }}</span>
+            <span class="period">/ base amount</span>
+          </div>
+
+          <h4 class="fw-semibold mb-3 text-purple">Key Highlights</h4>
+          <ul class="list-unstyled feature-list">
+            <li><i class="bi bi-calendar-check"></i> Validity: {{ plan.validity }} days</li>
+            <li><i class="bi bi-shield-check"></i> No Waiting Period</li>
+            <li><i class="bi bi-hospital"></i> Access to 5000+ Partner Hospitals</li>
+            <li><i class="bi bi-life-preserver"></i> Emergency Support 24/7</li>
+          </ul>
+
+          <div class="alert alert-light border mt-4">
+            <i class="bi bi-info-circle text-purple me-2"></i>
+            Your final premium will be calculated based on your age and health profile.
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="col-lg-4">
+        <div class="quote-card p-4 text-center">
+          <h4 class="fw-bold mb-3 text-purple">Get Your Personalized Quote</h4>
+          <p class="text-muted mb-4">Answer a few quick questions to calculate your premium.</p>
+
+          <button *ngIf="!questionsCompleted"
+                  class="btn btn-purple w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#questionModal">
+            <i class="bi bi-calculator"></i> Calculate Premium
+          </button>
+
+          <div *ngIf="questionsCompleted" class="premium-result mt-3">
+            <div class="premium-box mb-3">
+              <p class="label">Estimated Premium</p>
+              <h3 class="amount">₹{{ calculatedPremium }}</h3>
+              <small class="text-muted">per year</small>
+            </div>
+
+            <ul class="list-unstyled text-start small mb-4">
+              <li><strong>Base Amount:</strong> ₹{{ plan.baseAmt }}</li>
+              <li><strong>Age Factor:</strong> Applied</li>
+              <li><strong>Health Status:</strong> Evaluated</li>
+            </ul>
+
+            <button class="btn btn-success w-100 mb-2" (click)="proceedToBooking()">
+              <i class="bi bi-check-circle"></i> Proceed to Book
+            </button>
+            <button class="btn btn-outline-purple w-100" data-bs-toggle="modal" data-bs-target="#questionModal">
+              <i class="bi bi-arrow-repeat"></i> Recalculate
+            </button>
+          </div>
+        </div>
+
+        <div class="contact-box mt-4 p-3 text-center">
+          <p><i class="bi bi-telephone text-purple"></i> +91 98765 43210</p>
+          <p><i class="bi bi-envelope text-purple"></i> support@raindropsinsurance.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Section -->
+<div class="modal fade" id="questionModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title text-dark">
+          Question {{ currentQuestion + 1 }} of {{ questions.length }}
+        </h5>
+      </div>
+
+      <div class="modal-body p-4">
+        <h5 class="mb-4 text-dark">{{ getCurrentQuestion().question }}</h5>
+
+        <!-- Number Input -->
+        <div *ngIf="getCurrentQuestion().type === 'number'">
+          <input
+            type="number"
+            class="form-control form-control-lg"
+            [(ngModel)]="tempValue"
+            [placeholder]="getCurrentQuestion().placeholder"
+            [attr.min]="getCurrentQuestion().min"
+            [attr.max]="getCurrentQuestion().max"
+            (keyup.enter)="nextQuestion()">
+          <div *ngIf="validationError" class="text-danger mt-2 small">
+            <i class="bi bi-exclamation-circle"></i> {{ validationError }}
+          </div>
+        </div>
+
+        <!-- Boolean Input -->
+        <div *ngIf="getCurrentQuestion().type === 'boolean'" class="d-grid gap-3">
+          <button class="btn btn-outline-success btn-lg"
+                  [class.active]="tempValue === 'yes'"
+                  (click)="tempValue = 'yes'">
+            Yes
+          </button>
+          <button class="btn btn-outline-danger btn-lg"
+                  [class.active]="tempValue === 'no'"
+                  (click)="tempValue = 'no'">
+            No
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button"
+                class="btn btn-secondary"
+                (click)="previousQuestion()"
+                [disabled]="currentQuestion === 0">
+          <i class="bi bi-arrow-left"></i> Back
+        </button>
+        <button type="button"
+                class="btn btn-primary"
+                (click)="nextQuestion()"
+                [disabled]="!tempValue">
+          {{ currentQuestion < questions.length - 1 ? 'Next' : 'Finish' }}
+          <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

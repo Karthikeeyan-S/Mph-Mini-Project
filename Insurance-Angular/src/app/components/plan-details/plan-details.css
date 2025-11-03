@@ -1,0 +1,210 @@
+.plan-details {
+  background-color: #ffffff;
+  min-height: calc(100vh - 56px);
+}
+
+.text-purple {
+  color: #8458b3;
+}
+
+.btn-purple {
+  background-color: #8458b3;
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-purple:hover {
+  background-color: #6e3fa3;
+}
+
+.btn-outline-purple {
+  border: 2px solid #8458b3;
+  color: #8458b3;
+  transition: 0.3s;
+}
+
+.btn-outline-purple:hover {
+  background-color: #8458b3;
+  color: #fff;
+}
+
+.plan-card,
+.quote-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.quote-card {
+  position: sticky;
+  top: 80px;
+}
+
+.price-display {
+  font-size: 2rem;
+  color: #8458b3;
+  font-weight: 600;
+}
+
+.price-display .currency {
+  font-size: 1.5rem;
+  vertical-align: super;
+}
+
+.feature-list li {
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.feature-list i {
+  color: #8458b3;
+  margin-right: 10px;
+}
+
+.alert-light {
+  background-color: #f8f4fc;
+  border-color: #e3d8f5;
+  color: #5e3c8b;
+}
+
+.premium-box {
+  background-color: #f2e8ff;
+  border-radius: 12px;
+  padding: 20px;
+  color: #5e3c8b;
+}
+
+.contact-box {
+  background-color: #f8f4fc;
+  border-radius: 12px;
+  color: #5e3c8b;
+}
+
+.btn-outline-secondary {
+  border: 2px solid #8458b3 ;
+  color: #8458b3;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #8458b3 ;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(132, 88, 179, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary i {
+  margin-right: 6px;
+}
+
+/* --- Modal Styling for Insurance Questions --- */
+.question-modal .modal-content {
+  background-color: #ffffff; /* clean white background */
+  border: 2px solid #8458b3; /* purple border */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(132, 88, 179, 0.2);
+  overflow: hidden;
+}
+
+/* Modal Header */
+.question-modal .modal-header {
+  background-color: #f8f5fc;
+  border-bottom: 2px solid #8458b3;
+  color: #8458b3;
+  font-weight: 600;
+}
+
+/* Modal Title */
+.question-modal .modal-title {
+  color: #8458b3;
+  font-weight: 700;
+}
+
+/* Modal Body */
+.question-modal .modal-body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Input Fields */
+.question-modal input.form-control {
+  border: 2px solid #e2d6f3;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  transition: all 0.2s ease;
+}
+
+.question-modal input.form-control:focus {
+  border-color: #8458b3;
+  box-shadow: 0 0 5px rgba(132, 88, 179, 0.4);
+}
+
+/* Buttons inside modal */
+.question-modal .btn-primary {
+  background-color: #8458b3;
+  border: none;
+  font-weight: 500;
+}
+
+.question-modal .btn-primary:hover {
+  background-color: #6e3aa7;
+}
+
+.question-modal .btn-secondary {
+  background-color: #f2edf9;
+  color: #8458b3;
+  border: 1px solid #8458b3;
+}
+
+.question-modal .btn-secondary:hover {
+  background-color: #8458b3;
+  color: #fff;
+}
+
+/* Boolean Buttons (Yes/No) */
+.question-modal .btn-outline-success,
+.question-modal .btn-outline-danger {
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.question-modal .btn-outline-success.active,
+.question-modal .btn-outline-danger.active {
+  background-color: #8458b3;
+  border-color: #8458b3;
+  color: #fff;
+}
+
+/* Modal Footer */
+.question-modal .modal-footer {
+  background-color: #f8f5fc;
+  border-top: 2px solid #8458b3;
+}
+
+/* Smooth open animation */
+.question-modal .modal-content {
+  animation: fadeSlideIn 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

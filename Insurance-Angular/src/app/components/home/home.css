@@ -1,0 +1,98 @@
+.home-container {
+  background-color: #ffffff;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Accent color */
+.text-accent {
+  color: #8458b3 !important;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.hero-section h1 {
+  color: #8458b3;
+  line-height: 1.2;
+}
+
+.hero-section .lead {
+  color: #555;
+}
+
+.hero-img {
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(132, 88, 179, 0.15);
+}
+
+/* Buttons */
+.btn-accent {
+  background-color: #8458b3;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-accent:hover {
+  background-color: #7247a2;
+  transform: translateY(-2px);
+}
+
+.btn-outline-accent {
+  border: 2px solid #8458b3;
+  color: #8458b3;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-outline-accent:hover {
+  background-color: #8458b3;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+  background-color: #f9f8fb;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #e8e2f3;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(132, 88, 179, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(132, 88, 179, 0.2);
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #8458b3;
+  color: #fff;
+}
+
+.cta-section .btn-light {
+  color: #8458b3;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 25px;
+  transition: all 0.3s;
+}
+
+.cta-section .btn-light:hover {
+  background-color: #eee1fa;
+}
